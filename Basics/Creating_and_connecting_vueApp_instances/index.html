@@ -18,7 +18,17 @@
     </header>
     <section id="user-goal">
       <h2>My Course Goal</h2>
+      <!-- Interpolation -->
       <p>{{ courseGoal }}</p>
+      <!-- {{ }} = Cross site scripting prevention -->
+      <p>{{ courseGoalA }}</p>
+      <!-- Binding html -->
+      <p v-html="courseGoalB"></p>
+      <!-- V binding -->
+      <p>Learn more <a v-bind:href="vueLink">about vue</a>.</p>
+      <p>{{ outputGoalA() }}</p>
+      <!-- HTML binding can be a security risk, since {{ }} = Cross site scripting prevention -->
+      <p v-html="outputGoalB()"></p>
     </section>
   </body>
 </html>
