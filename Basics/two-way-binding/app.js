@@ -5,6 +5,15 @@ const app = Vue.createApp({
       name: "",
     };
   },
+  // Computed methods are better performance wise, when outputting data.
+  computed: {
+    fullname() {
+      if(this.name === '') {
+        return '';
+      }
+      return this.name + ' ' + 'Aggerholm';
+    }
+  },
   methods: {
     setName(event) {
       this.name = event.target.value;
@@ -18,12 +27,6 @@ const app = Vue.createApp({
     },
     resetInput() {
       this.name = '';
-    },
-    outputFullname() {
-      if(this.name === '') {
-        return '';
-      }
-      return this.name + ' ' + 'Aggerholm';
     },
   },
 });
