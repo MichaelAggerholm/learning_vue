@@ -2,17 +2,25 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
-      name: "",
+      name: '',
+      lastName: '',
     };
   },
   // Computed methods are better performance wise, when outputting data.
   computed: {
     fullname() {
-      if(this.name === '') {
+      if(this.name === '' || this.lastName === '') {
         return '';
       }
-      return this.name + ' ' + 'Aggerholm';
+      return this.name + ' ' + this.lastName;
     }
+  },
+  watch: {
+    counter(value) {
+      if(value > 50 || value < 0) {
+        this.counter = 0;
+      }
+    },
   },
   methods: {
     setName(event) {
