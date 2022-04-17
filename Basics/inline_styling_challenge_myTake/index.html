@@ -21,16 +21,16 @@
       <!-- The entered class should be added to the below paragraph -->
       <input type="text" v-on:input="setClass($event)" />
       <!-- (available classes: "user1", "user2") -->
-      <p :class="[user1Class, user2Class]">
-        Style me!
-      </p>
-      <button>Toggle Paragraph</button>
+      <p :class="[user1Class, user2Class, hiddenClass, visibleClass]">Style me!</p>
+      <button @click="buttonSelected">
+        Toggle Paragraph
+      </button>
       <!-- 2) Use the "visible" and "hidden" classes to show/ hide the above paragraph -->
       <!-- Clicking the button should toggle between the two options -->
 
       <!-- 3) Add dynamic inline styling to the below paragraph and let the user enter a background-color -->
-      <input type="text" />
-      <p>Style me inline!</p>
+      <input type="text" v-on:input="setBackground($event)" />
+      <p v-bind:style="{ background: '#' + color }">Style me inline!</p>
     </section>
   </body>
 </html>

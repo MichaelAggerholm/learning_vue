@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+button {
+  margin: 10px 30px;
+}
+
 html {
   font-family: 'Jost', sans-serif;
 }
