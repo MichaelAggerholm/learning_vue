@@ -3,7 +3,8 @@ const app = Vue.createApp({
     return {
       enteredTask: "",
       tasks: [],
-      showTasks: true,
+      isDisplayNone: false,
+      displayNoneClass: "displayNone",
     };
   },
   methods: {
